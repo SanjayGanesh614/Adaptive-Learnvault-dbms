@@ -1,8 +1,11 @@
 import sys
 import os
 
-# Add the parent directory to sys.path so we can import our modules
-sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+# Get the directory of the current file (functions/)
+# Its parent is the root of our backend
+BACKEND_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+if BACKEND_ROOT not in sys.path:
+    sys.path.insert(0, BACKEND_ROOT)
 
 from mangum import Mangum
 from main import app
