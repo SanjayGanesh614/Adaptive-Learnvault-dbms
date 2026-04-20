@@ -1,10 +1,17 @@
+import sys
+import os
+
+# Add parent directory to path to import core
+sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+from core.config import settings
 from pymongo import MongoClient
 import math
 import random
 
 # Connection
-client = MongoClient('mongodb://localhost:27017')
-db = client['learnvault']
+client = MongoClient(settings.MONGODB_URL)
+db = client[settings.DATABASE_NAME]
 
 def seed_graph():
     print("Seeding Knowledge Graph...")

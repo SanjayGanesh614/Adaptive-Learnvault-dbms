@@ -3,11 +3,11 @@ from typing import Optional
 
 class Settings(BaseSettings):
     PROJECT_NAME: str = "Adaptive LearnVault API"
-    SECRET_KEY: str = "supersecretkey"
+    SECRET_KEY: str
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 1440
     GEMINI_API_KEY: Optional[str] = None
-    MONGODB_URL: str = "mongodb://localhost:27017"
+    MONGODB_URL: str
     DATABASE_NAME: str = "learnvault"
     YOUTUBE_API_KEY: Optional[str] = None
     NVIDIA_API_KEY: Optional[str] = None
